@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <>
-      <PaperProvider>
+      <PaperProvider >
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen name="filmes-populares" component={FilmesPopulares} options={{ title: 'Filmes Populares' }} />

@@ -8,13 +8,30 @@ const FilmesDetalhes = ({ navigation, route }) => {
 
     useEffect(() => {
         const id = route.params.id
-        apiFilmes.get(`/movie/${id}?language=pt-BR`).then(resultado => {
+        apiFilmes.get(`/movie/${id}?`).then(resultado => {
             setFilme(resultado.data)
         })
     }, [])
 
     return (
-        <Text>Id: {route.params.id} </Text>
+<>
+        <Card> 
+          <Card.Cover source={{ uri: 'https://image.tmdb.org/t/p/w500/' + item.backdrop_path }} />
+          <Card.Content>
+            <Text variant="titleLarge">{item.title}</Text>
+            <Text variant="bodyMedium">{item.overview}</Text>
+          </Card.Content>
+        </Card>
+        <Card> 
+          <Card.Cover source={{ uri: 'https://image.tmdb.org/t/p/w500/' + item.backdrop_path }} />
+          <Card.Content>
+            <Text variant="titleLarge">{item.title}</Text>
+            <Text variant="bodyMedium">{item.overview}</Text>
+            <Text variant="titleLarge">{item.title}</Text>
+            <Text variant="bodyMedium">{item.overview}</Text>
+          </Card.Content>
+        </Card>
+</>
     )
 }
 
